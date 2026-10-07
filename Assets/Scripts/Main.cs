@@ -1,8 +1,11 @@
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Main : MonoBehaviour
 {
     public GameObject basicCoin;
+    public Text text;
+    public int currentScore = 0;
     
     void Start()
     {
@@ -13,8 +16,12 @@ public class Main : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    public void Update()
     {
-        
+        text.text = "Score: " + currentScore;
+        if (currentScore == 20)
+        {
+            Menu.Win();
+        }
     }
 }

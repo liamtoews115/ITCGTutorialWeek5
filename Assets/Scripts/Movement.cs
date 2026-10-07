@@ -1,3 +1,4 @@
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class Movement : MonoBehaviour
@@ -5,6 +6,7 @@ public class Movement : MonoBehaviour
     public float speed = 5.0f;
     public float rotationSpeed = 120.0f;
     public float jumpForce = 10.0f;
+    public Main menu;
     bool isGrounded; 
     private Rigidbody rb;
     void Start()
@@ -38,5 +40,14 @@ public class Movement : MonoBehaviour
     void OnCollisionStay()
     {
         isGrounded = true;
+    }
+
+    void OnTriggerEnter(Collider other)
+    {
+        if(other.CompareTag("coinTag"))
+        {
+            Destroy(other.gameObject); // destroys the coins and adds to the score
+            menu.currentScore ++;
+        }
     }
 }
