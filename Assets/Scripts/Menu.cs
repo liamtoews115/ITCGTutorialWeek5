@@ -5,6 +5,6 @@ public class Menu : MonoBehaviour
 {
     public void Win()
     {
-        SceneManager.LoadSceneAsync(2); // Load Win Screen
+        SceneManager.LoadSceneAsync(1); // Load Win Screen
     }
 }

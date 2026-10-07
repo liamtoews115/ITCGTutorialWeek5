@@ -44,7 +44,13 @@ public class Movement : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
-        if(other.CompareTag("coinTag"))
+        if(other.CompareTag("Good"))
+        {
+            Destroy(other.gameObject); // destroys the coins and adds to the score
+            menu.currentScore ++;
+            menu.currentScore ++;
+        }
+        if(other.CompareTag("Basic"))
         {
             Destroy(other.gameObject); // destroys the coins and adds to the score
             menu.currentScore ++;
